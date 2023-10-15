@@ -6,9 +6,9 @@ private void run() {
     comparisonOperators();
     logicalOperators();
     conditionalStatements();
-    loops();
     arrays();
     collections();
+    loops();
     methods();
     classes();
     exceptionHandling();
@@ -120,36 +120,248 @@ private void mathOperators() {
 }
 
 private void comparisonOperators() {
+    Integer a = 10;
+    Integer b = 5;
 
+    Boolean isEqual = (a == b);    // Equal to: false
+    debug('Numbers equal?', isEqual);
+
+    Boolean isNotEqual = (a != b); // Not equal to: true
+    debug('Numbers not equal?', isNotEqual);
+
+    Boolean isGreater = (a > b);   // Greater than: true
+    debug('Is A greater than B?', isGreater);
+
+    Boolean isLess = (a < b);      // Less than: false
+    debug('Is A less than B?', isLess);
+
+    Boolean isGreaterOrEqual = (a >= b); // Greater than or equal to: true
+    debug('Is A greater than or equal to B?', isGreaterOrEqual);
+
+    Boolean isLessOrEqual = (a <= b);    // Less than or equal to: false
+    debug('Is A less than or equal to B? ', isLessOrEqual);
 }
 
 private void logicalOperators() {
+    Boolean x = true;
+    Boolean y = false;
 
+    Boolean andResult = x && y; // Logical AND: false
+    debug('X and Y', andResult);
+
+    Boolean orResult = x || y;  // Logical OR: true
+    debug('X or Y', orResult);
+
+    Boolean notResult = !x;     // Logical NOT (inverts boolean values): false
+    debug('Inverse of x', notResult);
 }
 
 private void conditionalStatements() {
+    /* IF-ELSE STATEMENTS */
+    Integer age = 25;
 
+    if (age < 18) {
+        System.debug('You are a minor.');
+    } else if (age >= 18 && age <= 65) {
+        System.debug('You are an adult.');
+    } else {
+        System.debug('You are a senior citizen.');
+    }
+
+    /* SWITCH STATEMENTS */
+    Integer dayOfWeek = 3;
+    String dayName;
+
+    switch on dayOfWeek {
+        when 1 {
+            dayName = 'Monday';
+        }
+        when 2 {
+            dayName = 'Tuesday';
+        }
+        when 3 {
+            dayName = 'Wednesday';
+        }
+        when 4 {
+            dayName = 'Thursday';
+        }
+        when 5 {
+            dayName = 'Friday';
+        }
+        when else {
+            System.debug('Weekend');
+        }
+    }
+
+    debug('Day of week', dayName);
+}
+
+private void arrays() {
+    // Arrays are fixed-size data structures that store multiple values of the same data type
+    Integer[] numbers = new Integer[3];
+    numbers[0] = 1;
+    numbers[1] = 2;
+    numbers[2] = 3;
+    debug('Numbers array', numbers);
+
+    // shorthand declaration and initialization
+    String[] animals = new String[] {
+        'zebra', 'giraffe', 'gorilla'
+    };
+
+    debug('Animals array', animals);
+
+    // access a single index
+    debug('First number', numbers[0]);
+
+    // check the size of an array and access the last item in the array
+    debug('Size of animals array', animals.size());
+    debug('Last animal', animals[animals.size() - 1]);
+}
+
+private void collections() {
+    // Lists are ordered collections that can store duplicates and multiple values of the same ata type
+    List<String> cities = new List<String>();
+    
+    // add items
+    cities.add('New York');
+    cities.add('Berlin');
+    cities.add('London');
+
+    // get aingle item from list
+    debug('Second city', cities[1]);
+
+    // Sets are unordered and store multiple values of the same data type. They do not contain duplicate entries
+    Set<String> names = new Set<String>();
+    names.add('John');
+    names.add('Katie');
+    names.add('Jackson');
+
+    debug('Number of names in set', names.size());
+
+    // If we try to insert a duplicate, it will not be aded to the set
+    names.add('Katie');
+    debug('Number of items after dupe insert', names.size());
+
+    // To access a specific item in a set, we first need to cast the set into a list so that we can
+    // access the index
+    List<String> namesAsList = new List<String>(names);
+    debug('First item in set', namesAsList[0]);
+    
+    // Maps store key-value pairs allowing us to associate values with unique keys
+    Map<String, Integer> inventory = new Map<String, Integer>();
+    inventory.put('T-shirt', 10);
+    inventory.put('Jeans', 3);
+    inventory.put('Belt', 50);
+
+    // get a single item from map by its key
+    debug('Belt count', inventory.get('Belt'));
+
+    // We can get all map keys as a set of strings
+    Set<String> mapKeys = inventory.keySet();
+    debug('Map keys', mapKeys);
+
+    // We van get all map values as a list / array of values
+    List<Integer> mapValues = inventory.values();
+    debug('Map values', mapValues);
 }
 
 private void loops() {
 
 }
 
-private void arrays() {
-
-}
-
-private void collections() {
-
-}
-
 private void methods() {
+    // for-loop continues iterating until the condition is met
+    for (Integer i = 0; i < 5; i++) {
+        debug('For loop count', i);
+    }
 
+    // While-loop is used when you don't want to specify a condition beforehand. The loop will continue to iterate
+    // unless a condition (which is specified within the loop block) is met.
+    Integer count = 0;
+
+    while (count < 3) {
+        debug('While loop count', count);
+        count++; // we need this so that we won't loop infinitely
+    }
+
+    // Do-while-loops (unlike while-loops) are guaranteed to run at least once. Use this loop if you don't want to specify
+    // the condition beforehand, but want the loop to execute the code block AT LEAST ONCE.
+    Integer num = 1;
+
+    do {
+        debug('Do-while loop count', num);
+        num++;
+    } while (num <= 3);
+
+    // FOR-EACH LOOPS
+    // For-each loops are generally used with collection types, and they continue to iterate until the loop reaches the end of
+    // the collection.
+    
+    // Looping through array
+    Double[] temperatures = new Double[] {
+        24.5, 55.0, 85.7, 104.3
+    };
+
+    for (Double temperature : temperatures) {
+        debug('Temperature', temperature);
+    }
+
+    // We can also loop through other collections with any loop
+    
+    // Looping through list
+    List<String> groceries = new List<String> { 'apples', 'grapes', 'meat', 'water' };
+    
+    for (Integer i = 0; i < groceries.size(); i++) {
+        debug('Grocery item', groceries[i]);
+    }
+
+    // Same thing using a foreach loop
+    for (String item : groceries) {
+        debug('Foreach item', item);
+    }
+
+    // Looping through set
+    Set<String> cards = new Set<String> {
+        'A', 'J', 'K', 'Q', 'Joker'
+    };
+
+    for (String card : cards) {
+        debug('Your card', card);
+    }
+
+    // Looping through map keys
+    Map<String, String> locations = new Map<String, String> {
+        'Tokyo' => 'Japan', 'Kyoto' => 'Japan', 'Paris' => 'France'
+    };
+
+    for (String city : locations.keySet()) {
+        debug('Map key (city)', city);
+        debug('Map value (country)', locations.get(city));
+    }
+
+    // Looping through map values
+    for (String country : locations.values()) {
+        debug('Country', country);
+    }
 }
 
 private void classes() {
-    
+    Person person = new Person('Reggie', 45);
+    person.greet();
+    debug('New age', person.incrementAge());
 }
-private void exceptionHandling() {
 
+private void exceptionHandling() {
+    // Dividing by zero will throw a MathException so we need to handle it
+    try {
+        Integer num1 = 10;
+        Integer num2 = 0;
+        Integer result = num1 / num2;
+    } catch (MathException mex) {
+        debug('Math error', mex.getMessage());
+    } catch (Exception ex) {
+        // this runs if we encounter a different exception
+        debug('Oops, an error occurred', ex.getMessage());
+    }
 }
