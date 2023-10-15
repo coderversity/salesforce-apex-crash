@@ -44,7 +44,6 @@ $RECYCLE.BIN/
 **/.venv/
 **/venv/
 
-force-app/
 .vscode
 .husky
 config/
