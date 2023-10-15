@@ -1,18 +1,65 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Apex Fundamentals Crash Course by Coderversity
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+@Coderversity on YouTube - https://www.youtube.com/@coderversity
 
-## How Do You Plan to Deploy Your Changes?
+Welcome to the Salesforce Apex Fundamentals Crash Course repository! This repository contains code examples and resources to help you learn the fundamentals of Salesforce Apex programming.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Table of Contents
 
-## Configure Your Salesforce DX Project
+1. [Introduction](#introduction)
+2. [Getting Started](#getting-started)
+3. [Topics Covered](#topics-covered)
+4. [Code Examples](#code-examples)
+5. [Usage Rights](#usage-rights)
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Introduction
 
-## Read All About It
+Salesforce Apex is a powerful and versatile programming language specifically designed for developing and extending functionality within the Salesforce platform. It allows developers to build custom applications, automate business processes, and add new features to Salesforce, making it a key tool for Salesforce developers. This crash course will highlight some of the core features of the Apex programming language.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Getting Started
+
+To get started with the course, you can:
+
+- Clone this repository to your local machine.
+- Explore the code examples and resources provided in each section.
+- Follow along with the code examples, modify them, and experiment to deepen your understanding.
+- Refer to the README files within each section for more detailed explanations and instructions.
+
+You will also need to install Salesforce CLI v2. We walk you through these steps in the crash course.
+
+## Topics Covered
+
+The course covers the following fundamental topics:
+
+- Variables and Data Types
+- Operators
+- Control Flow (Conditional Statements and Loops)
+- Arrays and Collections
+- Functions (Methods)
+- Classes and Objects
+- Exception Handling
+
+## Code Examples
+
+There are two places you need to look for in this project:
+
+## scripts/apex/examples.apex
+
+This is the main script file that all example code is written in. You can anonymously run this script with the following command in the terminal:
+
+`sf apex run -f scripts/apex/example.apex`
+
+OR you can:
+
+- copy the code and log into Salesforce
+- Open Developer Console (in Lightning, click the top right gear icon > Developer Console)
+- In Developer Console, click Debug > Open Execute Anonymous Window
+- Paste the code into the window and click Execute
+
+NOTE: You will need to push all dependent classes and objects to your org first. Review the Salesforce Developer documentation online and/or Trailhead to get step-by-step directions on how to deploy your code and metadata.
+
+## Usage Rights
+
+You are free to use, modify, and distribute the content. You may not claim ownership of this content. All rights reserved.
+
+Happy learning and coding!
