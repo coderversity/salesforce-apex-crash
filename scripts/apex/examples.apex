@@ -9,7 +9,6 @@ private void run() {
     arrays();
     collections();
     loops();
-    methods();
     classes();
     exceptionHandling();
 }
@@ -267,10 +266,6 @@ private void collections() {
 }
 
 private void loops() {
-
-}
-
-private void methods() {
     // for-loop continues iterating until the condition is met
     for (Integer i = 0; i < 5; i++) {
         debug('For loop count', i);
